@@ -108,28 +108,12 @@ local function getCharId(src)
   if not src then return nil end
 
   local fw = getFw()
-  if fw then
-    local res = fwCallAny(fw, {
-      'GetPlayerCharacter', 'getPlayerCharacter',
-      'GetPlayerCharId', 'getPlayerCharId', 'GetPlayerCharID', 'getPlayerCharID',
-      'GetCharacterId', 'getCharacterId', 'GetCharacterID', 'getCharacterID',
-      'GetCharId', 'getCharId', 'GetCharID', 'getCharID',
-      'GetCurrentCharId', 'getCurrentCharId', 'GetCurrentCharID', 'getCurrentCharID',
-      'GetActiveCharId', 'getActiveCharId', 'GetActiveCharID', 'getActiveCharID',
-      'GetCid', 'getCid', 'GetCID', 'getCID'
-    }, src)
-    local cid = extractCharId(res)
-    if cid then return cid end
-  end
+  if not fw then return nil end
 
-  local st = Player(src) and Player(src).state or nil
-  if st then
-    local cid = extractCharId(st.charid or st.charId or st.characterId or st.character_id or st.cid or st.CID)
-    if cid then return cid end
-  end
-
-  return nil
+  local res = fw.GetPlayerCharacter and fw.GetPlayerCharacter(src) or nil
+  return extractCharId(res)
 end
+
 
   local function normalizeRoleList(v)
     if type(v) ~= 'table' then return nil end
