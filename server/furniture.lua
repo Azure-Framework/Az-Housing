@@ -1,6 +1,3 @@
-// File: no-comments-pasted.lua
-
-
 AZH = AZH or {}
 
 local function S()
