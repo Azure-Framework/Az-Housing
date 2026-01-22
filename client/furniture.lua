@@ -1,5 +1,3 @@
-// File: no-comments-pasted.lua
-
 AZH = AZH or {}
 AZH.Furniture = AZH.Furniture or {}
 
