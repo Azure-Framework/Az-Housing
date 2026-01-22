@@ -1,6 +1,3 @@
-// File: no-comments-pasted.lua
-
-
 AZH = AZH or {}
 AZH.Target = AZH.Target or {}
 AZH.C = AZH.C or {}
