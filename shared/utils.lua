@@ -1,7 +1,3 @@
-// File: no-comments-pasted.lua
-
-
-
 AZH = AZH or {}
 AZH.ResName = AZH.ResName or GetCurrentResourceName()
 
