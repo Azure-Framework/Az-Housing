@@ -1,6 +1,3 @@
-// File: no-comments-pasted.lua
-
-
 local RES = GetCurrentResourceName()
 Config = Config or {}
 Config.LastPosAutoSaveEnabled = (Config.LastPosAutoSaveEnabled ~= false)
